@@ -1,0 +1,249 @@
+body 
+{ 
+    font-family: Arial, sans-serif; 
+    background: #f5f6fa; 
+    padding: 20px; /* Espacio alrededor del contenido */
+} 
+/*estilo del contenedor principal*/
+.container 
+{ 
+    display: grid; /* Utilizamos grid para organizar el contenido en dos columnas */
+    grid-template-columns: repeat(2, 1fr); /* Dos columnas de igual tamaño */
+    gap: 20px; /* Espacio entre las columnas */
+} 
+/*estilo de la instrucción de ingreso de datos*/
+.instrucción 
+{ 
+    font-size: 18px; 
+    background:#6c63ff;
+    color: white;
+    padding: 10px;
+    border-radius: 8px; /* Bordes redondeados para la instrucción */
+}
+/*estilo de la tarjeta principal*/
+.card 
+{ 
+    display: flex; /* Utilizamos flexbox para organizar el contenido dentro de la tarjeta */
+    align-items: center; 
+    gap: 20px; 
+    background: white; 
+    padding: 20px; 
+    margin-bottom: 20px; /* Espacio debajo de cada tarjeta */
+    border-radius: 10px; /* Bordes redondeados para la tarjeta */
+    box-shadow: 0cap 2px 5px rgba(0,0,0,0.1); /* Sombra suave para dar profundidad a la tarjeta */
+} 
+/*estilo de la matriz de coeficientes*/
+.matriz-card 
+{ 
+    display: flex; 
+    align-items: center; 
+    flex-direction: column; 
+    width: 50%; /* Ancho de la tarjeta para la matriz de coeficientes */
+    background: white; 
+    padding: 20px; 
+    margin-bottom: 20px; 
+    border-radius: 10px; 
+} 
+/*estilo de la gráfica 3D*/
+.ggb-card 
+{ 
+    position: relative; /* Posicionamos la tarjeta de la gráfica 3D de manera relativa para poder ajustar su posición con left */
+    left: -440px;
+    display: flex;
+    align-items: center; 
+    flex-direction: column; /* Organizamos el contenido de la tarjeta de la gráfica 3D en una columna */
+    width: 140%; /* Ancho de la tarjeta para la gráfica 3D, ajustado para ocupar más espacio que la tarjeta de la matriz de coeficientes */
+    background: white; 
+    padding: 20px; 
+    margin-bottom: 20px; 
+    border-radius: 10px; 
+}
+/*estilo de la instrucción de ingreso de datos*/
+.textografica
+{ 
+    font-family: Arial, sans-serif;
+    font-size: 25px;
+    color: rgb(23, 23, 23);
+} 
+
+/*bóton de graficar*/
+.btn 
+{ 
+    margin-top: 15px; 
+    padding: 10px; 
+    background: #FFA02E;
+    opacity: 0.6; 
+    width: 110px;
+    color: white; 
+    border: none; /* Eliminamos el borde predeterminado del botón */
+    border-radius: 8px; 
+    cursor: pointer; /* Cambiamos el cursor a pointer para indicar que es un botón clicable */
+    transition: background 0.3s ease; /* Agregamos una transición suave para el cambio de color de fondo al hacer hover */
+}
+/*efecto hover del botón*/
+.btn:hover 
+{ 
+    background-color: #b77321; 
+} 
+/*estilo de la matriz de coeficientes*/
+.matriz 
+{ 
+    display: grid; 
+    grid-template-columns: repeat(3, 60px); 
+    gap: 10px; 
+    margin-top: 10px; /* Espacio entre la instrucción y la matriz de coeficientes */
+} 
+/*estilo de cada celda de la matriz*/
+.cell 
+{ 
+    width: 60px; 
+    height: 60px; 
+    border: 1px solid #ccc; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    background: #fafafa; 
+}
+/*estilo de la caja de resultado*/
+.resultado-card
+{ 
+    display: grid; 
+    text-align: center;
+    flex-direction: column;   
+    gap: 20px;
+    width: 50%;
+    background: white; 
+    padding: 20px; 
+    margin-bottom: 20px; 
+    border-radius: 10px; 
+}
+/*estilo del texto de resultado*/
+.resultado-texto
+{ 
+    font-size: 18px; 
+    background:#6c63ff;
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 0.1px;
+}
+/*estilo del texto de solución*/
+.solucion-texto
+{
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    margin-top: 0px;
+    color: rgb(23, 23, 23);
+    background: #f0f0f0;
+}
+/*estilo de la tabla de resultados*/
+.tabla-card
+{
+    position: relative;
+    left: -440px;
+    display: flex;
+    align-items: center; 
+    flex-direction: column;
+    width: 140%; 
+    background: white; 
+    padding: 20px; 
+    margin-bottom: 20px; 
+    border-radius: 10px;  
+}
+/*estilo del texto de la tabla de resultados*/
+.textotabla
+{
+    font-family: Arial, sans-serif;
+    font-size: 25px;
+    color: rgb(23, 23, 23);
+}
+/*estilo de la tabla de iteraciones*/
+#tabla-iteraciones {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+/*estilo de las celdas de la tabla de iteraciones*/
+#tabla-iteraciones th,#tabla-iteraciones td 
+{
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+/*estilo de los encabezados de la tabla de iteraciones*/
+#tabla-iteraciones th {
+    background-color: #b77321; 
+    opacity: 0.6; 
+    color: white;
+}
+/*estilo del criterio de parada*/
+#criterio {
+    width: 50%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    margin-bottom: 3px;
+    background: white;
+}
+/*estilo de las cajas de error y iteraciones*/
+#errorBox,#iterBox 
+{
+    background: #f8f9fa;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+}
+/*estilo de las etiquetas de error y iteraciones*/
+#errorBox label, #iterBox label 
+{
+    display: block; /* Hacemos que las etiquetas ocupen toda la línea para que el input quede debajo de ellas */
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+}
+/*estilo de los inputs de error y iteraciones*/
+#errorBox input,#iterBox input 
+{
+    width: 90%;
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+/*texto de la instrucción */
+.valores-iniciales 
+{
+    font-size: 14px;
+    color: #6b7280;             
+    margin-bottom: 10px;
+}
+
+/*contenedor de los valores iniciales */
+#valoresIniciales 
+{
+    display: flex;
+    gap: 12px;                   
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/*estilo de las cajas de texto */
+#valoresIniciales input 
+{
+    width: 80px;
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #d1d5db; 
+    border-radius: 8px;
+    font-size: 14px;
+    transition: all 0.3s ease; /* Transición suave para el efecto de enfoque */
+}
+
+/*efecto al seleccionar el input */
+#valoresIniciales input:focus 
+{
+    outline: none; /* Eliminamos el borde de enfoque predeterminado */
+    border-color: #6366f1;      
+    box-shadow: 0 0 5px rgba(99, 102, 241, 0.4);
+}

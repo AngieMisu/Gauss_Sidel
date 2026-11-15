@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+
+<html lang="es"> <!-- Cambié el idioma a español -->
+
+<head>
+    <meta charset="UTF-8"> <!-- Cambié la codificación a UTF-8 para soportar caracteres especiales -->
+    <title>Método de Gauss-Seidel</title> 
+    <link rel="stylesheet" href="style.css"> <!-- Enlace al archivo CSS para ponerle estilos a la página -->
+    <script src="https://www.geogebra.org/apps/deployggb.js"></script> <!-- Enlace al script de GeoGebra para implementar la gráfica 3D -->
+</head>
+
+<body>
+    <div class="card"> <!-- Contenedor principal con estilo de tarjeta -->
+        <img src="Imagenes/logo.jpg" alt="logo" width="100"> <!-- Imagen del logo con un ancho de 100 píxeles -->
+        <h1>Método de Gauss-Seidel</h1>
+    </div>
+    
+    <main class="container"> <!-- Contenedor principal para el contenido de la página -->
+        <div class="matriz-card"> <!-- Tarjeta para ingresar la matriz y el vector -->
+                <p class="instrucción"> <!-- Párrafo con instrucciones para el usuario -->
+                    Ingresa los datos de la matriz para obtener el resultado
+                </p>
+
+                <h2>Matriz A</h2> 
+                <div id="matriz" class="matriz"></div> <!-- Contenedor para ingresar la matriz A -->
+
+                <h2>Vector B</h2>
+                <div id="vectorB" class="matriz"></div> <!-- Contenedor para ingresar el vector B -->
+                
+                <h2>Valores iniciales</h2>
+                <p class="valores-iniciales"> <!-- Párrafo con instrucciones para ingresar los valores iniciales -->
+                    Ingresa los valores iniciales para cada variable (X1, X2, X3)
+                </p>
+
+                <div id="valoresIniciales" class="matriz"> <!-- Contenedor para ingresar los valores iniciales de las variables -->
+                    <input type="number" step="any" placeholder="X1" id="X1"> 
+                    <input type="number" step="any" placeholder="X2" id="X2">
+                    <input type="number" step="any" placeholder="X3" id="X3">
+                </div>
+                
+                <h2>Criterio de parada</h2>
+
+                <select id="criterio"> <!-- Menú desplegable para seleccionar el criterio de parada -->
+                    <option value="error">Porcentaje de error</option> <!-- Opción para seleccionar el criterio de parada basado en el porcentaje de error -->
+                    <option value="iteraciones">Número de iteraciones</option> <!-- Opción para seleccionar el criterio de parada basado en el número de iteraciones -->
+                </select>
+
+                <br><br> <!-- Saltos de línea para separar los elementos -->
+
+                <div id="errorBox"> <!-- Contenedor para ingresar la tolerancia (error) si se selecciona el criterio de parada por porcentaje de error -->
+                    <label>Tolerancia (error):</label>
+                    <input type="number" id="tolerancia" value="0.0001" step="0.0001"> <!-- Campo de entrada para la tolerancia con un valor predeterminado de 0.0001 -->
+                </div>
+
+                <br>
+                    <div id="iterBox"> <!-- Contenedor para ingresar el número máximo de iteraciones si se selecciona el criterio de parada por número de iteraciones -->
+                        <label>Máximo de iteraciones:</label> 
+                        <input type="number" id="maxIter" value="1" min="1"> 
+                    </div>
+                <br>
+                    <button id="graficar" class="btn">Resolver</button> <!-- Botón para iniciar el proceso de resolución del sistema de ecuaciones utilizando el método de Gauss-Seidel -->
+        </div>
+                    
+        <div class="ggb-card"> <!-- Tarjeta para mostrar la gráfica 3D utilizando GeoGebra -->
+            <p class="textografica">
+                Gráfica 3D
+            </p>
+            <div id="ggb-element"></div> <!-- Contenedor para la gráfica 3D generada por GeoGebra -->
+        </div>
+
+        <!-- Resultado -->
+        <div class="resultado-card">
+            <p class="resultado-texto">
+                Resultado
+            </p>
+            <div class="solucion-texto">
+                <p id="resultado">
+                 Aquí se mostrará el resultado de la solución del sistema de ecuaciones utilizando el método de Gauss-Seidel.
+                </p>
+            </div>
+        </div>
+
+        <!-- Tabla de iteraciones -->
+        <div class="tabla-card">
+            <p class="textotabla">
+                Tabla de Iteraciones
+            </p>
+            <table id="tabla-iteraciones"> <!-- Tabla para mostrar las iteraciones del método de Gauss-Seidel -->
+                <thead> <!-- Encabezado de la tabla con los nombres de las columnas -->
+                    <tr> <!-- Fila del encabezado -->
+                        <th>X1</th>
+                        <th>X2</th>
+                        <th>X3</th>
+                        <th>% Error X1</th>
+                        <th>% Error X2</th>
+                        <th>% Error X3</th>
+                    </tr>
+                </thead>
+                <tbody id="tabla-body"> <!-- Cuerpo de la tabla donde se agregarán las filas de cada iteración -->
+                    <tr>
+                        <td>0</td> <!-- Valores iniciales de X1, X2, X3 y los errores correspondientes para la primera fila de la tabla -->
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0%</td>
+                        <td>0%</td>
+                        <td>0%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+    <script src="app.js"></script> <!-- Enlace al archivo JavaScript que contiene la lógica para resolver el sistema de ecuaciones utilizando el método de Gauss-Seidel y actualizar la gráfica y la tabla de iteraciones -->
+</body>
+</html>
